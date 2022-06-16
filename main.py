@@ -4,6 +4,13 @@ import random
 pokemon_ids = random.sample(range(1, 152), 6)
 
 with open('pokemon_encyclopedia.txt', 'w') as pokemon_file:
+    print("""-----
+Welcome to the Pokemon Encyclopedia!
+This was created as part of a CFGdegree course.
+Here are some Pokemon for your perusal.
+-----
+""", file=pokemon_file)
+
     for pokemon_id in pokemon_ids:
         response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{pokemon_id}")
         # Converts from JavaScript Object Notation into Python lists and dictionaries
