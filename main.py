@@ -4,7 +4,7 @@ import random
 
 def fetch_pokemon(pokemon_id):
     response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{pokemon_id}")
-    return response
+    return response.json()
 
 
 def output_pokemon_data(pokemon):
